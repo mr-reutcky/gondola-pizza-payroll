@@ -41,7 +41,7 @@
 }
 
 main {
-  height: 100%;
+  height: fit-content;
   background-color: #101013;
   font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
 }
