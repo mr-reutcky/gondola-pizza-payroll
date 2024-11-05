@@ -18,6 +18,7 @@ const totalCashHours = select('.total-cash-hours');
 const totalHoliHours = select('.total-holi-hours');
 const totalHoliCashHours = select('.total-holi-cash-hours');
 const overallTotal = select('.overall-total');
+const submitButton = select('.submit');
 let employeeMap = new Map();
 
 class Employee {
@@ -130,6 +131,34 @@ listen('click', addHours, () => {
   hourAmount.value = '';
   hourType.value = '-- Pay Rate --';
   person.value = '-- Person --';
+});
 
-  console.log(employeeMap);
+submitButton.addEventListener('click', () => {
+  let emailBody = 'Biweekly Hour Report:\n\n';
+  let totalReg = 0;
+  let totalCash = 0;
+  let totalHoliReg = 0;
+  let totalHoliCash = 0;
+  let overall = 0;
+
+  // Loop through the employees and generate the email body
+  employeeMap.forEach(employee => {
+    emailBody += employee.getHoursSummary() + '\n';
+    totalReg += employee.regHours;
+    totalCash += employee.cashHours;
+    totalHoliReg += employee.holiHours;
+    totalHoliCash += employee.holiCash;
+    overall += employee.getTotalHours();
+  });
+
+  emailBody += `\nOverall Totals:\n`;
+  emailBody += `Regular Hours: ${totalReg}\n`;
+  emailBody += `Cash Hours: ${totalCash}\n`;
+  emailBody += `Holiday Hours: ${totalHoliReg}\n`;
+  emailBody += `Holiday Cash Hours: ${totalHoliCash}\n`;
+  emailBody += `Total Hours: ${overall}\n`;
+
+  // Open the email client with the generated body
+  const mailtoLink = `mailto:sreutcky@gmail.com?subject=Biweekly%20Hour%20Report&body=${encodeURIComponent(emailBody)}`;
+  window.location.href = mailtoLink;
 });

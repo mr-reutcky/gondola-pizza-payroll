@@ -109,6 +109,11 @@ h1 {
   border-radius: 5px;
 }
 
+.totals a {
+  color: #fff;
+  text-decoration: none;
+}
+
 .submit{
   width: 120px;
   height: 40px;
