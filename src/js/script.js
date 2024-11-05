@@ -39,9 +39,9 @@ class Employee {
   getHoursSummary() {
     let summary = `${this.name}:`;
     if (this.regHours > 0) summary += ` Regular Hours: ${this.regHours}`;
-    if (this.cashHours > 0) summary += ` Cash Hours: ${this.cashHours}`;
-    if (this.holiHours > 0) summary += ` Holiday Hours: ${this.holiHours}`;
-    if (this.holiCash > 0) summary += ` Holiday Cash: ${this.holiCash}`;
+    if (this.cashHours > 0) summary += `, Cash Hours: ${this.cashHours}`;
+    if (this.holiHours > 0) summary += `, Holiday Hours: ${this.holiHours}`;
+    if (this.holiCash > 0) summary += `, Holiday Cash: ${this.holiCash}`;
     return summary;
   }
 
