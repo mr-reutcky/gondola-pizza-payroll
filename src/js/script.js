@@ -52,7 +52,7 @@ class Employee {
 }
 
 function isValidHours(hours) {
-  const enteredHour = parseInt(hours, 10);
+  const enteredHour = parseFloat(hours);
   return enteredHour >= 0 && enteredHour <= 99;
 }
 
@@ -92,7 +92,7 @@ function updateTotals() {
 }
 
 listen('click', addHours, () => {
-  const hours = parseInt(hourAmount.value);
+  const hours = parseFloat(hourAmount.value);
 
   const currentPerson = person.value;
   if (currentPerson === '-- Person --') {
@@ -141,7 +141,6 @@ submitButton.addEventListener('click', () => {
   let totalHoliCash = 0;
   let overall = 0;
 
-  // Loop through the employees and generate the email body
   employeeMap.forEach(employee => {
     emailBody += employee.getHoursSummary() + '\n';
     totalReg += employee.regHours;
@@ -158,7 +157,6 @@ submitButton.addEventListener('click', () => {
   emailBody += `Holiday Cash Hours: ${totalHoliCash}\n`;
   emailBody += `Total Hours: ${overall}\n`;
 
-  // Open the email client with the generated body
   const mailtoLink = `mailto:sreutcky@gmail.com?subject=Biweekly%20Hour%20Report&body=${encodeURIComponent(emailBody)}`;
   window.location.href = mailtoLink;
 });
