@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=devicewidth, initial-scale=1" />
+    <meta name="author" content="Samuel Reutcky" />
+    <meta name="description" content="My Web Project" />
+    <meta name="keywords" content="html, css, seo, web devlopment" />
+    <title>Gondola Hour Calculator</title>
+    <link rel="icon" href="./src/img/favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/mrspecht/cdn/reset.css"
+      media="all"
+    />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <script src="./src/js/script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="flex flex-column flex-align-center fit-content">
+          <h1>Biweekly Hour Sheet</h1>
+          <div class="controls flex gap-15">
+            <select class="person-select">
+              <option selected disabled>-- Person --</option>
+              <option value="Blair">Blair</option>
+              <option value="Strati">Strati</option>
+              <option value="Ryan">Ryan</option>
+              <option value="Noah">Noah</option>
+              <option value="Jake">Jake</option>
+              <option value="Bailey">Bailey</option>
+              <option value="Nik">Nik</option>
+              <option value="Carson">Carson</option>
+              <option value="Nash">Nash</option>
+              <option value="Justin">Justin</option>
+              <option value="Mitchell">Mitchell</option>
+              <option value="Brady">Brady</option>
+              <option value="Brendan">Brendan</option>
+              <option value="Pan">Pan</option>
+              <option value="Sam">Sam</option>
+              <option value="Liam">Liam</option>
+              <option value="Vick">Vick</option>
+              <option value="Kieran">Kieran</option>
+              <option value="Tyson">Tyson</option>
+              <option value="Yy">Ty</option>
+              <option value="Joe">Joe</option>
+              <option value="Reece">Reece</option>
+            </select>
+            <select class="type-of-hour">
+              <option selected disabled>-- Pay Rate --</option>
+              <option value="reg">Regular</option>
+              <option value="cash">Cash</option>
+              <option value="holi-reg">Holiday Regular</option>
+              <option value="holi-cash">Holiday Cash</option>
+            </select>
+            <input
+              type="text"
+              class="hour-input"
+              placeholder="Number of hours"
+            />
+            <button class="add-hours">Add Hours</button>
+          </div>
+          <div class="display flex flex-column gap-15 relative">
+            <div class="totals flex flex-between gap-5">
+              <div>
+                <p>Regular Hours: <span class="total-reg-hours">0</span></p>
+                <p>Cash Hours: <span class="total-cash-hours">0</span></p>
+                <p>Holiday Hours: <span class="total-holi-hours">0</span></p>
+                <p>Holiday Cash: <span class="total-holi-cash-hours">0</span></p>
+              </div>
+              <div>
+                <p>Overall Total: <span class="overall-total">0</span></p>
+                <button class="submit">Submit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

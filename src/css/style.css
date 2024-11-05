@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+.container {
+  width: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-align-center {
+  align-items: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+.gap-15 {
+  gap: 15px;
+}
+
+.gap-5 {
+  gap: 5px;
+}
+
+.fit-content {
+  min-height: calc(fit-content + 50px);
+}
+
+.invald-border {
+  border : 2px solid #ff3939;
+}
+
+.relative {
+  position: relative;
+}
+
+main {
+  height: fit-content;
+  background-color: #101013;
+  font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  color: #fff;
+  font-size: 6rem;
+  font-weight: 400;
+  margin-top: 60px;
+}
+
+.person-select, .type-of-hour, .hour-input {
+  width: 150px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #1c1c22;
+  color: #fff;
+  padding: 8px;
+  margin-top: 25px;
+}
+
+.hour-input::placeholder {
+  color: #fff;
+}
+
+.add-hours {
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #27a027;
+  color: #fff;
+  transition: all 0.25s ease-in-out;
+  margin-top: 25px;
+}
+
+.add-hours:hover {
+  background-color: #38b838;
+  scale: 1.01;
+}
+
+.display {
+  margin: 25px 0 25px 0;
+  width: 615px;
+  min-height: 665px;
+  max-width: calc(fit-content + 65px);
+  border-radius: 5px;
+  background-color: #1c1c22;
+  padding: 15px;
+}
+
+.employee {
+  color: #fff;
+  background-color: #25252d;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.totals {
+  width: 95%;
+  position: absolute;
+  bottom: 15px;
+  color: #fff;
+  background-color: #25252d;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.submit{
+  width: 120px;
+  height: 40px;
+  border-radius: 5px;
+  background-color: #27a027;
+  color: #fff;
+  transition: all 0.25s ease-in-out;
+  margin-top: 25px;
+}
+
+.submit:hover {
+  background-color: #38b838;
+  scale: 1.01;
+}
