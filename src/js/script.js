@@ -39,10 +39,10 @@ class Employee {
 
   getHoursSummary() {
     let summary = `${this.name}:`;
-    if (this.regHours > 0) summary += ` Regular Hours: ${this.regHours}`;
-    if (this.cashHours > 0) summary += `, Cash Hours: ${this.cashHours}`;
-    if (this.holiHours > 0) summary += `, Holiday Hours: ${this.holiHours}`;
-    if (this.holiCash > 0) summary += `, Holiday Cash: ${this.holiCash}`;
+    if (this.regHours > 0) summary += ` Regular Hours = ${this.regHours}`;
+    if (this.cashHours > 0) summary += `, Cash Hours = ${this.cashHours}`;
+    if (this.holiHours > 0) summary += `, Holiday Hours = ${this.holiHours}`;
+    if (this.holiCash > 0) summary += `, Holiday Cash = ${this.holiCash}`;
     return summary;
   }
 
@@ -133,6 +133,25 @@ listen('click', addHours, () => {
   person.value = '-- Person --';
 });
 
+// Focus on hourType when an employee is selected
+listen('change', hourType, () => {
+  if (hourType !== '-- Pay Rate --') {
+    hourAmount.focus();
+  }
+});
+
+function pressEnterToAddHours(field) {
+  listen('keydown', field, (event) => {
+    if (event.key === 'Enter') {
+      addHours.click();
+    }
+  });
+}
+
+pressEnterToAddHours(person);
+pressEnterToAddHours(hourType);
+pressEnterToAddHours(hourAmount);
+
 submitButton.addEventListener('click', () => {
   let emailBody = 'Biweekly Hour Report:\n\n';
   let totalReg = 0;
@@ -157,6 +176,6 @@ submitButton.addEventListener('click', () => {
   emailBody += `Holiday Cash Hours: ${totalHoliCash}\n`;
   emailBody += `Total Hours: ${overall}\n`;
 
-  const mailtoLink = `mailto:sreutcky@gmail.com?subject=Biweekly%20Hour%20Report&body=${encodeURIComponent(emailBody)}`;
+  const mailtoLink = `mailto:example@123.com?subject=Biweekly%20Hour%20Report&body=${encodeURIComponent(emailBody)}`;
   window.location.href = mailtoLink;
 });
