@@ -88,7 +88,7 @@ h1 {
   margin: 25px 0 25px 0;
   width: 615px;
   min-height: 665px;
-  max-width: calc(fit-content + 65px);
+  max-width: calc(fit-content + 80px);
   border-radius: 5px;
   background-color: #1c1c22;
   padding: 15px;
@@ -154,6 +154,10 @@ h1 {
   .employee {
     font-size: 1.6rem;
   }
+
+  .totals {
+    width: 93.5%;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -180,5 +184,9 @@ h1 {
 
   .employee {
     font-size: 1.4rem;
+  }
+
+  .totals {
+    width: 91.5%;
   }
 }

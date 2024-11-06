@@ -103,7 +103,7 @@ listen('click', addHours, () => {
   }
 
   const selectedType = hourType.value;
-  if (selectedType === 'Hour Type') {
+  if (selectedType === 'Type') {
     hourType.classList.add('invald-border');
     return;
   } else {
@@ -129,13 +129,12 @@ listen('click', addHours, () => {
   updateTotals();
 
   hourAmount.value = '';
-  hourType.value = 'Hour Type';
+  hourType.value = 'Type';
   person.value = 'Person';
 });
 
-// Focus on hourType when an employee is selected
 listen('change', hourType, () => {
-  if (hourType !== '-- Pay Rate --') {
+  if (hourType !== 'Type') {
     hourAmount.focus();
   }
 });
