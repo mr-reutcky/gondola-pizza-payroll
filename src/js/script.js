@@ -154,7 +154,7 @@ pressEnterToAddHours(hourType);
 pressEnterToAddHours(hourAmount);
 
 submitButton.addEventListener('click', () => {
-  let emailBody = 'Biweekly Hour Report:\n\n';
+  let emailBody = 'Hour Report:\n\n';
   let totalReg = 0;
   let totalCash = 0;
   let totalHoliReg = 0;
@@ -177,6 +177,15 @@ submitButton.addEventListener('click', () => {
   emailBody += `Holiday Cash Hours: ${totalHoliCash}\n`;
   emailBody += `Total Hours: ${overall}\n`;
 
-  const mailtoLink = `mailto:example@123.com?subject=Biweekly%20Hour%20Report&body=${encodeURIComponent(emailBody)}`;
+  // Get the current date
+  const today = new Date();
+  const formattedDate = today.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+
+  const mailtoLink = `mailto:example@123.com?subject=Biweekly%20Hour%20Report%20(${encodeURIComponent(formattedDate)})&body=${encodeURIComponent(emailBody)}`;
   window.location.href = mailtoLink;
 });
+
