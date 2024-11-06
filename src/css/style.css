@@ -40,9 +40,11 @@
   position: relative;
 }
 
-main {
-  height: fit-content;
+html {
   background-color: #101013;
+}
+main {
+  height: 100%;
   font-family: 'Nunito Sans', Arial, Helvetica, sans-serif;
 }
 
@@ -127,4 +129,56 @@ h1 {
 .submit:hover {
   background-color: #38b838;
   scale: 1.01;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+    margin-top: 40px;
+  }
+
+  .person-select, .type-of-hour, .hour-input {
+    width: 110px;
+    font-size: 1.4rem;
+  }
+
+  .add-hours {
+    width: 80px;
+    font-size: 1.4rem;
+  }
+
+  .display {
+    width: 455px;
+  }
+
+  .employee {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  .person-select, .type-of-hour, .hour-input {
+    width: 80px;
+    height: 30px;
+    font-size: 1.4rem;
+  }
+
+  .add-hours {
+    width: 60px;
+    height: 30px;
+    font-size: 1rem;
+  }
+
+  .display {
+    width: 345px;
+  }
+
+  .employee {
+    font-size: 1.4rem;
+  }
 }

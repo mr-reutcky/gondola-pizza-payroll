@@ -95,7 +95,7 @@ listen('click', addHours, () => {
   const hours = parseFloat(hourAmount.value);
 
   const currentPerson = person.value;
-  if (currentPerson === '-- Person --') {
+  if (currentPerson === 'Person') {
     person.classList.add('invald-border');
     return;
   } else {
@@ -103,7 +103,7 @@ listen('click', addHours, () => {
   }
 
   const selectedType = hourType.value;
-  if (selectedType === '-- Pay Rate --') {
+  if (selectedType === 'Hour Type') {
     hourType.classList.add('invald-border');
     return;
   } else {
@@ -129,8 +129,8 @@ listen('click', addHours, () => {
   updateTotals();
 
   hourAmount.value = '';
-  hourType.value = '-- Pay Rate --';
-  person.value = '-- Person --';
+  hourType.value = 'Hour Type';
+  person.value = 'Person';
 });
 
 // Focus on hourType when an employee is selected
