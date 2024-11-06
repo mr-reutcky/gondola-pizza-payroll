@@ -103,6 +103,7 @@ listen('click', addHours, () => {
   }
 
   const selectedType = hourType.value;
+
   if (selectedType === 'Type') {
     hourType.classList.add('invald-border');
     return;
@@ -112,6 +113,7 @@ listen('click', addHours, () => {
 
   if (!isValidHours(hours)) {
     hourAmount.classList.add('invald-border');
+    hourAmount.value = '';
     return;
   } else {
     hourAmount.classList.remove('invald-border');
