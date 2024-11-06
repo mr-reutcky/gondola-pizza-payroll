@@ -168,13 +168,11 @@ h1 {
 
   .person-select, .type-of-hour, .hour-input {
     width: 80px;
-    height: 30px;
     font-size: 1.4rem;
   }
 
   .add-hours {
     width: 60px;
-    height: 30px;
     font-size: 1rem;
   }
 
